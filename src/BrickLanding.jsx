@@ -44,7 +44,7 @@ export default function BrickLanding({ setPage, brickColor = "#ffffff" }) {
       <BrickHero brickColor={brickColor} />
 
       {/* SECTION 2: ARCHITECTURAL INTEGRITY */}
-      <section className="relative w-full min-h-[45vh] flex items-center py-20 md:py-28 px-8 md:px-14 border-b border-[#D9C6AC]/50">
+      <section id="material" className="relative w-full min-h-[45vh] flex items-center py-20 md:py-28 px-8 md:px-14 border-b border-[#D9C6AC]/50">
         <div className="relative z-10 w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start max-w-6xl mx-auto">
           {/* Left Text Column */}
           <div className="text-left">
@@ -71,7 +71,7 @@ export default function BrickLanding({ setPage, brickColor = "#ffffff" }) {
       </section>
 
       {/* SECTION 3: DIRECT TO SITE (LOGISTICS SECTION WITH 3D MODEL ASSET ON RIGHT) */}
-      <section className="relative w-full min-h-[60vh] flex items-center py-16 md:py-24 px-8 md:px-14 border-t border-[#D9C6AC]/40 overflow-hidden">
+      <section id="logistics" className="relative w-full min-h-[60vh] flex items-center py-16 md:py-24 px-8 md:px-14 border-t border-[#D9C6AC]/40 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-16">
           
           {/* Left Column: Logistics Info */}

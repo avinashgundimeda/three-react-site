@@ -162,7 +162,7 @@ export default function CookWithItSection() {
 
   return (
     // OUTER STICKY SCROLL WRAPPER (h-[360vh] gives vertical scroll range to drive horizontal progress)
-    <div ref={containerRef} className="relative w-full h-[360vh] bg-[#8E2417]">
+    <div id="recipes" ref={containerRef} className="relative w-full h-[360vh] bg-[#8E2417]">
       <style>{`
         /* Realistic Paper Texture & Imperfection Shadow */
         .paper-sheet {
