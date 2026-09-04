@@ -4,7 +4,7 @@ export default function BottomTicker() {
   const items = [
     'HIGH DENSITY CLAY',
     '•',
-    'KILN-FIRED AT 1200°C',
+    'KURAPATI BRICKS - FIRED AT 1200°C',
     '•',
     'SMALL BATCH MANUFACTURING',
     '•',

@@ -71,7 +71,7 @@ export default function BrickHero({ brickColor = '#ffffff' }) {
             <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight text-[#1C1815] uppercase leading-none mb-1 md:mb-4">
               SHAPED BY
             </h1>
-            <h2 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight text-[#C1502E] uppercase leading-none">
+            <h2 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight text-[#8E2417] uppercase leading-none">
               FIRED BY
             </h2>
           </div>
@@ -111,7 +111,7 @@ export default function BrickHero({ brickColor = '#ffffff' }) {
             <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight text-[#1C1815] uppercase leading-none mb-1 md:mb-4">
               HAND.
             </h1>
-            <h2 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight text-[#C1502E] uppercase leading-none">
+            <h2 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight text-[#8E2417] uppercase leading-none">
               EARTH.
             </h2>
           </div>
@@ -124,7 +124,7 @@ export default function BrickHero({ brickColor = '#ffffff' }) {
           </p>
 
           <div className="mt-5 flex items-center justify-center gap-4">
-            <button className="bg-[#C1502E] text-white hover:bg-[#a84122] font-semibold text-xs uppercase tracking-wider rounded-full px-7 py-3 shadow-md hover:shadow-lg transition-all duration-300">
+            <button className="bg-[#8E2417] text-white hover:bg-[#a34725] font-semibold text-xs uppercase tracking-wider rounded-full px-7 py-3 shadow-md hover:shadow-lg transition-all duration-300">
               See the range →
             </button>
           </div>

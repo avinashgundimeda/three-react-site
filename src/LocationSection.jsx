@@ -56,7 +56,7 @@ export default function LocationSection() {
   const embedUrl = "https://maps.google.com/maps?q=15.8399422,79.9817231&t=&z=14&ie=UTF8&iwloc=&output=embed"
 
   return (
-    <section id="location" className="relative pt-16 pb-24 px-6 md:px-10 lg:px-16 overflow-hidden bg-[#F4EFE6] border-t border-[#D9C6AC]/50 scroll-mt-20">
+    <section id="location" className="relative pt-16 pb-24 px-6 md:px-10 lg:px-16 overflow-hidden bg-transparent border-t border-[#D9C6AC]/50 scroll-mt-20">
       {/* Background radial dot decorations */}
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-40"
@@ -94,7 +94,7 @@ export default function LocationSection() {
                 <div>
                   <h4 className="text-xs font-bold text-[#221D19] uppercase tracking-wider">Factory Address</h4>
                   <p className="mt-1 text-sm text-[#5A4F44] leading-relaxed">
-                    Kurapati Srinu Bricks, Chimakurthy Road Area, Addanki, AP, India
+                    Kurapati Bricks, Chimakurthy Road Area, Addanki, AP, India
                   </p>
                 </div>
               </div>
@@ -136,12 +136,8 @@ export default function LocationSection() {
             </a>
           </div>
 
-          {/* Right Column: Embedded Map Card with Rope Hangers */}
-          <div className="md:col-span-7 w-full pt-16 relative overflow-visible">
-            {/* Rope Hangers */}
-            <RopeHanger className="absolute bottom-[98%] left-10 md:left-20 w-8 h-24 pointer-events-none select-none z-10" />
-            <RopeHanger className="absolute bottom-[98%] right-10 md:right-20 w-8 h-24 pointer-events-none select-none z-10" />
-
+          {/* Right Column: Embedded Map Card */}
+          <div className="md:col-span-7 w-full pt-4 md:pt-8 relative">
             <div className="relative group p-2.5 rounded-3xl border border-[#D9C6AC]/80 bg-white/80 backdrop-blur-md shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
               <iframe
                 title="Google Maps Location for Kurapati Srinu Bricks"

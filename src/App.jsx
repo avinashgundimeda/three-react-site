@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
 import Navbar from './Navbar'
 import BrickLanding from './BrickLanding'
 import BottomTicker from './BottomTicker'
@@ -16,6 +18,30 @@ export default function App() {
 
   const brickColor = BRICK_COLORS[activeBrickId] || '#ffffff'
 
+  // Initialize Lenis luxury smooth scroll
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      smoothTouch: false,
+      touchMultiplier: 1.5,
+      wheelMultiplier: 0.95,
+    })
+
+    let rafId
+    function raf(time) {
+      lenis.raf(time)
+      rafId = requestAnimationFrame(raf)
+    }
+    rafId = requestAnimationFrame(raf)
+
+    return () => {
+      cancelAnimationFrame(rafId)
+      lenis.destroy()
+    }
+  }, [])
+
   return (
     <div className="relative min-h-screen w-full pb-10">
       {/* DYNAMIC TRANSFORMING NAVBAR */}
@@ -29,3 +55,4 @@ export default function App() {
     </div>
   )
 }
+

@@ -1,14 +1,20 @@
 import React from "react"
-import BrickHero from "./BrickHero"
+import ContinuousBackgroundCanvas from "./ContinuousBackgroundCanvas"
+import BrickHeroAndMaterial from "./BrickHeroAndMaterial"
 import InteractiveBrick from "./InteractiveBrick"
 import RitualSection from "./RitualSection"
 import ProductsSection from "./ProductsSection"
 import CookWithItSection from "./CookWithItSection"
+import OwnerSection from "./OwnerSection"
 import LocationSection from "./LocationSection"
+import QuoteSection from "./QuoteSection"
+import Footer from "./Footer"
 
 export default function BrickLanding({ setPage, brickColor = "#ffffff" }) {
   return (
-    <div className="min-h-screen w-full bg-[#F4EFE6] text-[#221D19] font-sans pb-16">
+    <div className="relative min-h-screen w-full text-[#221D19] font-sans bg-transparent">
+      {/* PERSISTENT CONTINUOUS BACKGROUND CANVAS ACROSS ALL SECTIONS */}
+      <ContinuousBackgroundCanvas />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600&display=swap');
         .font-display { font-family: 'Archivo', ui-sans-serif, system-ui; }
@@ -42,35 +48,8 @@ export default function BrickLanding({ setPage, brickColor = "#ffffff" }) {
         }
       `}</style>
 
-      {/* MAIN HERO STAGE (KAIRO STYLE WITH SRINU BRICKS CONTENT) */}
-      <BrickHero brickColor={brickColor} />
-
-      {/* SECTION 2: ARCHITECTURAL INTEGRITY */}
-      <section id="material" className="relative w-full min-h-[45vh] flex items-center py-20 md:py-28 px-8 md:px-14 border-b border-[#D9C6AC]/50">
-        <div className="relative z-10 w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start max-w-6xl mx-auto">
-          {/* Left Text Column */}
-          <div className="text-left">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#C1502E]">01 / Material</span>
-            <h2 className="font-display font-black text-4xl text-[#221D19] mt-2">
-              Architectural Density
-            </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-[#5A4F44]">
-              Our local clay deposit mixtures in Addanki are refined for high dry density, providing load-bearing capacity that stands the test of generations.
-            </p>
-          </div>
-
-          {/* Right Text Column */}
-          <div className="text-left">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#C1502E]">02 / Firing</span>
-            <h2 className="font-display font-black text-4xl text-[#221D19] mt-2">
-              Kiln Hardened
-            </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-[#5A4F44]">
-              Baked in automated computer-controlled tunnel kilns for perfect structural vitrification, giving each brick an impermeable, rugged face finish.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* MAIN HERO & MATERIAL STAGE WITH CONTINUOUS SCROLL-DRIVEN BRICK ANIMATION */}
+      <BrickHeroAndMaterial brickColor={brickColor} />
 
       {/* SECTION 3: DIRECT TO SITE (LOGISTICS SECTION WITH 3D MODEL ASSET ON RIGHT) */}
       <section id="logistics" className="relative w-full min-h-[60vh] flex items-center py-16 md:py-24 px-8 md:px-14 border-t border-[#D9C6AC]/40 overflow-hidden">
@@ -78,11 +57,11 @@ export default function BrickLanding({ setPage, brickColor = "#ffffff" }) {
 
           {/* Left Column: Logistics Info */}
           <div className="lg:col-span-7 max-w-2xl text-left">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#C1502E]">03 / Logistics</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#8E2417]">03 / Logistics</span>
             <h2 className="font-display font-black text-[42px] sm:text-[54px] md:text-[64px] leading-tight tracking-tight text-[#221D19] mt-2">
               Direct Supply.
               <br />
-              <span className="text-[#C1502E]">No Middlemen.</span>
+              <span className="text-[#8E2417]">No Middlemen.</span>
             </h2>
 
             <p className="mt-6 text-[16px] leading-relaxed text-[#5A4F44]">
@@ -91,12 +70,12 @@ export default function BrickLanding({ setPage, brickColor = "#ffffff" }) {
 
             <div className="mt-10 flex flex-wrap gap-12">
               <div>
-                <span className="font-display font-black text-4xl text-[#C1502E] block">20M+</span>
-                <span className="text-xs text-[#8a7d6d] uppercase tracking-wider mt-1 block">Bricks Delivered</span>
+                <span className="font-display font-black text-4xl text-[#8E2417] block">20M+</span>
+                <span className="text-xs text-[#8E2417] uppercase tracking-wider mt-1 block">Bricks Delivered</span>
               </div>
               <div>
-                <span className="font-display font-black text-4xl text-[#C1502E] block">100%</span>
-                <span className="text-xs text-[#8a7d6d] uppercase tracking-wider mt-1 block">Grade-A Quality</span>
+                <span className="font-display font-black text-4xl text-[#8E2417] block">100%</span>
+                <span className="text-xs text-[#8E2417] uppercase tracking-wider mt-1 block">Grade-A Quality</span>
               </div>
             </div>
           </div>
@@ -127,8 +106,17 @@ export default function BrickLanding({ setPage, brickColor = "#ffffff" }) {
       {/* SECTION 6: SCROLL-DRIVEN PHYSICAL PAPER HANGING GALLERY */}
       <CookWithItSection />
 
-      {/* SECTION 5: LOCATION & FACTORY MAP SECTION */}
+      {/* SECTION 7: HERITAGE & MASTER CRAFTSMAN OWNER SECTION */}
+      <OwnerSection />
+
+      {/* SECTION 8: LOCATION & FACTORY MAP SECTION */}
       <LocationSection />
+
+      {/* SECTION 9: STANDALONE DIRECT FACTORY QUOTATION & TELEMETRY SECTION */}
+      <QuoteSection />
+
+      {/* SECTION 10: ULTRA-PREMIUM ARCHITECTURAL FOOTER */}
+      <Footer />
     </div>
   )
 }

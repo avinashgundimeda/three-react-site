@@ -1,10 +1,9 @@
 import React, { useRef, useState, useEffect, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useGLTF, OrbitControls, Center, Html } from '@react-three/drei'
-import * as THREE from 'three'
+import { useGLTF, Center, Html } from '@react-three/drei'
 
-// Clean 3D Brick Model component with smooth 360° hover/drag logic
-function Model({ url, page, scrollProgress, brickColor, isInteractive }) {
+// Clean 3D Brick Model component with continuous slow automatic rotation & 360° hover/drag logic
+function Model({ url, page, brickColor, isInteractive }) {
   const { scene } = useGLTF(url)
   const groupRef = useRef()
   
@@ -15,14 +14,14 @@ function Model({ url, page, scrollProgress, brickColor, isInteractive }) {
   const dragAccumRef = useRef({ x: 0, y: 0 })
   const currentRotRef = useRef({ x: 0, y: 0 })
 
-  // Window mouse move listener for 360° rotation across full screen
+  // Window mouse move listener for 360° rotation across screen
   useEffect(() => {
     const handleMouseMove = (e) => {
       const nx = (e.clientX / window.innerWidth) * 2 - 1
       const ny = -(e.clientY / window.innerHeight) * 2 + 1
 
-      hoverOffsetRef.current.y = nx * Math.PI
-      hoverOffsetRef.current.x = -ny * (Math.PI * 0.65)
+      hoverOffsetRef.current.y = nx * Math.PI * 0.75
+      hoverOffsetRef.current.x = -ny * (Math.PI * 0.5)
 
       if (isDraggingRef.current) {
         const dx = e.clientX - lastPointerRef.current.x
@@ -75,16 +74,15 @@ function Model({ url, page, scrollProgress, brickColor, isInteractive }) {
       let targetX = 0.0
       let targetY = Math.sin(t * 1.2) * 0.04 // Subtle natural float
       let targetZ = 0.0
-      let baseScale = 0.125 // Calibrated prominent size
+      let baseScale = page === 'logistics' ? 0.098 : 0.122
 
-      targetX = 0.0
-      targetY = Math.sin(t * 1.2) * 0.04
-      targetZ = 0.0
-      baseScale = page === 'logistics' ? 0.095 : 0.122
+      // Continuous slow automatic rotation for Section 03 / Logistics
+      const autoRotateSpeed = page === 'logistics' ? 0.22 : 0.12
+      const autoRotationY = t * autoRotateSpeed
 
       // Calculate total target 360° rotation
       let targetRotX = baseRotationX + dragAccumRef.current.x
-      let targetRotY = baseRotationY + dragAccumRef.current.y
+      let targetRotY = baseRotationY + dragAccumRef.current.y + autoRotationY
       let targetRotZ = baseRotationZ
 
       if (hovered || isInteractive) {
@@ -203,4 +201,3 @@ export default function InteractiveBrick({ page, scrollProgress, brickColor, isI
 }
 
 useGLTF.preload('/brick_megascan/scene.gltf')
-
