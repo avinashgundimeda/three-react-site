@@ -54,7 +54,7 @@ export default function Navbar({ page, setPage }) {
           className="flex items-center gap-2.5 cursor-pointer group"
           onClick={() => scrollToSection('home')}
         >
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#B5502E] text-white font-display font-black text-sm shadow-sm group-hover:scale-105 transition-transform">
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#8E2417] text-white font-display font-black text-sm shadow-sm group-hover:scale-105 transition-transform">
             K
           </span>
           <span className="font-display font-extrabold text-xl tracking-tight text-[#221D19]">
@@ -70,13 +70,13 @@ export default function Navbar({ page, setPage }) {
               onClick={() => scrollToSection(item.id)}
               className={`transition-colors duration-300 relative py-1 ${
                 activeSection === item.id
-                  ? 'text-[#B5502E] font-bold'
+                  ? 'text-[#8E2417] font-bold'
                   : 'text-[#5A4F44] hover:text-[#221D19]'
               }`}
             >
               {item.label}
               {activeSection === item.id && (
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#B5502E] rounded-full" />
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#8E2417] rounded-full" />
               )}
             </button>
           ))}
@@ -89,7 +89,7 @@ export default function Navbar({ page, setPage }) {
             {/* Search Icon */}
             <button
               aria-label="Search"
-              className="hover:text-[#B5502E] transition-colors p-1.5 rounded-full hover:bg-black/5"
+              className="hover:text-[#8E2417] transition-colors p-1.5 rounded-full hover:bg-black/5"
               title="Search catalog"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -101,12 +101,12 @@ export default function Navbar({ page, setPage }) {
             {/* Language selector */}
             <button
               aria-label="Language selector"
-              className="hover:text-[#B5502E] transition-colors p-1.5 rounded-full hover:bg-black/5"
+              className="hover:text-[#8E2417] transition-colors p-1.5 rounded-full hover:bg-black/5"
               title="English (US)"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="12" cy="12" r="10" />
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z" />
                 <path d="M2 12h20" />
               </svg>
             </button>
@@ -114,14 +114,14 @@ export default function Navbar({ page, setPage }) {
             {/* Notifications */}
             <button
               aria-label="Toggle notification"
-              className="hover:text-[#B5502E] transition-colors p-1.5 rounded-full hover:bg-black/5 relative"
+              className="hover:text-[#8E2417] transition-colors p-1.5 rounded-full hover:bg-black/5 relative"
               title="Notifications"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
                 <path d="M13.73 21a2 2 0 0 1-3.46 0" />
               </svg>
-              <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#B5502E]" />
+              <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#8E2417]" />
             </button>
           </div>
 
@@ -131,7 +131,7 @@ export default function Navbar({ page, setPage }) {
             className="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-[#EAE2D5] text-[#5A4F44] hover:text-[#221D19] border border-[#D5C7B3] transition-colors"
           >
             <span>Quote Spec</span>
-            <span className="w-4 h-4 rounded-full bg-[#B5502E] text-white text-[10px] font-extrabold flex items-center justify-center">
+            <span className="w-4 h-4 rounded-full bg-[#8E2417] text-white text-[10px] font-extrabold flex items-center justify-center">
               3
             </span>
           </button>
@@ -139,7 +139,7 @@ export default function Navbar({ page, setPage }) {
           {/* MAIN ACTION BUTTON */}
           <button
             onClick={() => scrollToSection('location')}
-            className="bg-[#221D19] text-white hover:bg-[#3a3129] px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-full shadow-sm hover:shadow transition-all duration-300"
+            className="bg-[#221D19] text-white hover:bg-black px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-full shadow-sm hover:shadow transition-all duration-300"
           >
             Get a Quote
           </button>
@@ -170,7 +170,7 @@ export default function Navbar({ page, setPage }) {
               onClick={() => scrollToSection(item.id)}
               className={`text-left py-1.5 px-2 rounded-md transition-colors ${
                 activeSection === item.id
-                  ? 'bg-[#B5502E]/10 text-[#B5502E] font-bold'
+                  ? 'bg-[#8E2417]/10 text-[#8E2417] font-bold'
                   : 'hover:bg-black/5 text-[#5A4F44]'
               }`}
             >

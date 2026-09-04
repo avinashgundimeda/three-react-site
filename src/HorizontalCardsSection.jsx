@@ -1,45 +1,51 @@
 import React, { useRef, useState, useEffect } from 'react'
+import img1 from "./assets/1.jpg"
+import img2 from "./assets/2.jpg"
+import img3 from "./assets/3.jpg"
+import img4 from "./assets/4.jpg"
+import img5 from "./assets/5.jpg"
+
 
 const CARDS_DATA = [
   {
     id: '01',
     title: 'Exposed Brick Facade',
-    subtitle: '外壁レンガ',
+    subtitle: 'బాహ్య ఇటుక దిమ్మల ప్రదేశం',
     specs: 'GRADE-A · LOAD-BEARING',
     tags: ['HIGH DENSITY', 'WEATHERPROOF', 'KILN FIRED'],
     description: 'Precision manufactured for exterior load-bearing facades with ultra-low water absorption and high thermal mass.',
     heatDots: 4,
-    image: '/facade.jpg',
+    image: img1,
   },
   {
     id: '02',
     title: 'Architectural Archways',
-    subtitle: 'アーチ構造',
+    subtitle: 'ఆర్చ్ నిర్మాణం',
     specs: 'STRUCTURAL · CUSTOM CUT',
     tags: ['HIGH STRENGTH', 'CUSTOM FORM', 'VITRIFIED'],
     description: 'High compressive strength bricks tailored for vaulted ceilings, load arches, and structural lintels.',
     heatDots: 5,
-    image: '/archway.jpg',
+    image: img2,
   },
   {
     id: '03',
     title: 'Paved Clay Courtyard',
-    subtitle: '床敷きレンガ',
+    subtitle: 'నిర్మాణ అంగణం',
     specs: 'SLIP-RESISTANT · PAVER',
     tags: ['HERRINGBONE', 'SOLID CLAY', 'HEAVY DUTY'],
     description: 'Dense, slip-resistant paver bricks designed for high foot-traffic courtyards, walkways, and patios.',
     heatDots: 3,
-    image: '/courtyard.jpg',
+    image: img3,
   },
   {
     id: '04',
     title: 'Refractory Fireplace',
-    subtitle: '暖炉・耐火窯',
+    subtitle: 'ఉష్ణ నిరోధక పొయ్యి',
     specs: '1200°C · THERMAL SHOCK',
     tags: ['HEAT PROOF', 'FIRE CLAY', 'LOW DUST'],
     description: 'High-temperature refractory clay bricks crafted for wood-fired ovens, fireplaces, and thermal hearths.',
     heatDots: 5,
-    image: '/facade.jpg',
+    image: img4,
   },
 ]
 
@@ -108,7 +114,7 @@ export default function HorizontalCardsSection() {
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#8E2417] font-extrabold text-[10px]">
               06
             </span>
-            <span>APPLICATIONS · 施工例</span>
+            <span>APPLICATIONS · నిర్మాణ ఉదాహరణలు</span>
             <span className="text-white/40">|</span>
             <span className="text-white/80">FIVE SPECS, ONE BRICK</span>
           </div>

@@ -56,7 +56,7 @@ export default function BrickHero({ brickColor = '#ffffff' }) {
 
       {/* HERO STAGE CENTER CONTAINER */}
       <div className="relative z-20 w-full max-w-7xl mx-auto flex-1 flex flex-col justify-center items-center my-2 py-2">
-        
+
         {/* TOP LEFT CATEGORY SPEC TAG */}
         <div className="absolute top-2 left-0 hidden md:flex flex-col text-[11px] font-mono tracking-widest text-[#7A6F63] uppercase">
           <span>HANDMADE CLAY</span>
@@ -65,7 +65,7 @@ export default function BrickHero({ brickColor = '#ffffff' }) {
 
         {/* COMPOSITION STAGE: FRAMING TEXT (LEFT / RIGHT) + CENTERED HERO BRICK */}
         <div className="relative w-full grid grid-cols-12 items-center justify-between text-center my-2 max-w-6xl mx-auto">
-          
+
           {/* LEFT TYPOGRAPHY COLUMN */}
           <div className="col-span-12 md:col-span-4 text-center md:text-right z-10 select-none">
             <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight text-[#1C1815] uppercase leading-none mb-1 md:mb-4">

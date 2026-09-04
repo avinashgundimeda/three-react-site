@@ -58,12 +58,12 @@ export default function LocationSection() {
   return (
     <section id="location" className="relative pt-16 pb-24 px-6 md:px-10 lg:px-16 overflow-hidden bg-[#F4EFE6] border-t border-[#D9C6AC]/50 scroll-mt-20">
       {/* Background radial dot decorations */}
-      <div 
-        className="pointer-events-none absolute inset-0 -z-10 opacity-40" 
-        style={{ 
-          backgroundImage: "radial-gradient(rgba(122, 111, 99, 0.2) 1.2px, transparent 1.2px)", 
-          backgroundSize: "24px 24px" 
-        }} 
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 opacity-40"
+        style={{
+          backgroundImage: "radial-gradient(rgba(122, 111, 99, 0.2) 1.2px, transparent 1.2px)",
+          backgroundSize: "24px 24px"
+        }}
       />
       <div className="pointer-events-none absolute top-1/2 -right-32 h-96 w-96 rounded-full bg-[#C1502E]/10 blur-3xl -z-10" />
 

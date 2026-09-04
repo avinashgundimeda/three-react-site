@@ -1,90 +1,106 @@
 import React, { useRef, useState, useEffect } from 'react'
+import house1 from './assets/Houses/1.jpg'
+import house2 from './assets/Houses/2.jpg'
+import house3 from './assets/Houses/3.avif'
+import house4 from './assets/Houses/4.jpg'
+import house5 from './assets/Houses/5.jpg'
+import house6 from './assets/Houses/6.jpg'
 
-const RECIPES_DATA = [
-  {
-    id: '01',
-    time: '3 MIN',
-    serves: 'SERVES 1',
-    title: 'Tamago kake gohan',
-    japaneseTitle: '卵かけご飯',
-    tags: ['HOT RICE', '1 RAW EGG', 'SOY · KAIRO'],
-    description: 'Crack the egg over steaming rice, add a splash of soy, then one spoon of KAIRO. Stir hard until glossy. Breakfast, upgraded.',
-    heatDots: 3,
-    stamp: 'KAIRO · 香味辣油',
-    image: '/facade.jpg',
-    tilt: '-1.4deg',
-    clipOffset: '-2px',
-  },
-  {
-    id: '02',
-    time: '8 MIN',
-    serves: 'SERVES 2',
-    title: 'Chili garlic udon',
-    japaneseTitle: '辣油うどん',
-    tags: ['FRESH UDON', 'BUTTER · SOY', 'SPRING ONION'],
-    description: 'Boil, drain, toss with cold butter and soy while hot. Finish with two spoons of KAIRO and a shower of green onion.',
-    heatDots: 4,
-    stamp: 'KAIRO · 香味辣油',
-    image: '/archway.jpg',
-    tilt: '1.2deg',
-    clipOffset: '1px',
-  },
-  {
-    id: '03',
-    time: '2 MIN',
-    serves: 'SERVES 4',
-    title: 'Gyoza dip',
-    japaneseTitle: '餃子のたれ',
-    tags: ['RICE VINEGAR', 'SOY · KAIRO', 'GRATED GINGER'],
-    description: 'Two parts soy, one part vinegar, one spoon of KAIRO, a pinch of ginger. The dip your dumplings have been waiting for.',
-    heatDots: 2,
-    stamp: 'KAIRO · 香味辣油',
-    image: '/courtyard.jpg',
-    tilt: '-0.9deg',
-    clipOffset: '-1px',
-  },
-  {
-    id: '04',
-    time: '12 MIN',
-    serves: 'SERVES 2',
-    title: 'Crispy rice & chili',
-    japaneseTitle: '焼きおにぎり',
-    tags: ['DAY-OLD RICE', 'FRIED EGG', 'KAIRO DRIZZLE'],
-    description: 'Press cold rice into a hot skillet until golden and crisp on top. Drizzle KAIRO generously and top with a crispy fried egg.',
-    heatDots: 4,
-    stamp: 'KAIRO · 香味辣油',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
-    tilt: '1.6deg',
-    clipOffset: '3px',
-  },
-  {
-    id: '05',
-    time: '15 MIN',
-    serves: 'SERVES 4',
-    title: 'Slow-roasted garlic bowl',
-    japaneseTitle: '大蒜窯焼き',
-    tags: ['ROASTED GARLIC', 'SESAME', 'CRUSTY BREAD'],
-    description: 'Infuse whole garlic cloves into warm terracotta stone dishes, crushed with toasted sesame seeds and chili oil.',
-    heatDots: 5,
-    stamp: 'KAIRO · 香味辣油',
-    image: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80',
-    tilt: '-1.1deg',
-    clipOffset: '-2px',
-  },
-  {
-    id: '06',
-    time: '5 MIN',
-    serves: 'SERVES 1',
-    title: 'Smoked brick hearth noodles',
-    japaneseTitle: '窯焼きラーメン',
-    tags: ['RAMEN NOODLES', 'BAMBOO', 'KAIRO BATCH'],
-    description: 'Rich broth poured over springy wheat noodles, finished with smoked sesame oil and a spoonful of small-batch chili infusion.',
-    heatDots: 3,
-    stamp: 'KAIRO · 香味辣油',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
-    tilt: '0.8deg',
-    clipOffset: '0px',
-  },
+const PROJECTS_DATA = [
+ {
+  id: '01',
+  displayId: '01',
+  time: '2024',
+  serves: 'Residential Construction',
+  title: 'Addanki Courtyard House',
+  teluguTitle: 'Courtyard House',
+  tags: ['Facing Brick', 'Quality Construction', 'Courtyard'],
+  description: 'A home built with terracotta facing bricks, designed for natural temperature control and improved ventilation.',
+  ratingDots: 5,
+  stamp: 'ADDANKI · Addanki Brick',
+  image: house1,
+  tilt: '-1.2deg',
+  clipOffset: '-2px',
+},
+{
+  id: '02',
+  displayId: '02',
+  time: '2023',
+  serves: 'Commercial Building',
+  title: 'Modern Arch Villa',
+  teluguTitle: 'Arch Design Villa',
+  tags: ['Arch Construction', 'High Strength', 'Traditional Style'],
+  description: 'Handcrafted bricks used to create highly durable arch structures without the need for reinforced steel bars.',
+  ratingDots: 5,
+  stamp: 'ADDANKI · Addanki Brick',
+  image: house2,
+  tilt: '1.4deg',
+  clipOffset: '1px',
+},
+
+{
+  id: '03',
+  displayId: '03',
+  time: '2024',
+  serves: 'Public Pavilion',
+  title: 'Luminous Facade Building',
+  teluguTitle: 'Luminous Facade',
+  tags: ['Fired Brick', 'Weather Resistant', 'Long Lasting'],
+  description: 'Exterior walls built with high-density kiln-fired bricks designed to withstand generations of changing weather.',
+  ratingDots: 5,
+  stamp: 'ADDANKI · Addanki Brick',
+  image: house3,
+  tilt: '-0.8deg',
+  clipOffset: '-1px',
+},
+
+{
+  id: '04',
+  displayId: '04',
+  time: '2023',
+  serves: 'Estate Housing',
+  title: 'Terracotta Brick Manor',
+  teluguTitle: 'Terracotta Residence',
+  tags: ['Rustic Finish', 'High Density', 'Thermal Resistance'],
+  description: 'A multi-level residential complex crafted with Addanki clay, featuring naturally rich tones and a timeless character.',
+  ratingDots: 5,
+  stamp: 'ADDANKI · Addanki Brick',
+  image: house4,
+  tilt: '1.2deg',
+  clipOffset: '2px',
+},
+
+{
+  id: '05',
+  displayId: '05',
+  time: '2024',
+  serves: 'Boutique Hotel',
+  title: 'Hearth & Timber Resort',
+  teluguTitle: 'Brick Resort',
+  tags: ['Handcrafted', 'Distinctive Design', 'Natural Beauty'],
+  description: 'Luxury resort suites designed with floor-to-ceiling exposed brick walls, creating a warm and timeless atmosphere.',
+  ratingDots: 5,
+  stamp: 'ADDANKI · Addanki Brick',
+  image: house5,
+  tilt: '-1.0deg',
+  clipOffset: '-2px',
+},
+
+{
+  id: '06',
+  displayId: '06',
+  time: '2024',
+  serves: 'Art Studio',
+  title: 'Kiln Artisan Studio',
+  teluguTitle: 'Artisan Workshop',
+  tags: ['Dark Brick', 'Sound Insulation', 'Vitrified'],
+  description: 'A contemporary studio built with dark vitrified clinker bricks for improved acoustic performance and thermal control.',
+  ratingDots: 5,
+  stamp: 'ADDANKI · Addanki Brick',
+  image: house6,
+  tilt: '0.9deg',
+  clipOffset: '0px',
+},
 ]
 
 export default function CookWithItSection() {
@@ -92,12 +108,22 @@ export default function CookWithItSection() {
   const trackRef = useRef(null)
 
   const [progress, setProgress] = useState(0)
-  const [activeIndex, setActiveIndex] = useState(1)
+  const [selectedProject, setSelectedProject] = useState(null)
 
   // Smooth lerp state for physics interpolation
   const currentTranslateX = useRef(0)
   const targetTranslateX = useRef(0)
   const animationFrameId = useRef(null)
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedProject(null)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,14 +149,6 @@ export default function CookWithItSection() {
       const maxTranslate = Math.max(0, trackWidth - window.innerWidth + 120)
 
       targetTranslateX.current = -rawProgress * maxTranslate
-
-      // Update active card index indicator based on progress
-      const cardCount = RECIPES_DATA.length
-      const currentCard = Math.min(
-        cardCount,
-        Math.max(1, Math.floor(rawProgress * cardCount) + 1)
-      )
-      setActiveIndex(currentCard)
     }
 
     // Animation loop for physics lerp easing
@@ -147,7 +165,7 @@ export default function CookWithItSection() {
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     window.addEventListener('resize', handleScroll, { passive: true })
-    
+
     handleScroll()
     animationFrameId.current = requestAnimationFrame(animate)
 
@@ -164,149 +182,158 @@ export default function CookWithItSection() {
     // OUTER STICKY SCROLL WRAPPER (h-[360vh] gives vertical scroll range to drive horizontal progress)
     <div id="recipes" ref={containerRef} className="relative w-full h-[360vh] bg-[#8E2417]">
       <style>{`
-        /* Realistic Paper Texture & Imperfection Shadow */
-        .paper-sheet {
-          background-color: #F6F2E9;
+        @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Mandali&family=Inter:wght@400;500;600;700&display=swap');
+
+        .font-cook-display { font-family: 'Archivo', ui-sans-serif, system-ui; }
+        .font-telugu { font-family: 'Mandali', sans-serif; }
+
+        /* Authentic Physical Paper Sheet */
+        .paper-card {
+          background-color: #FFFFFF;
           background-image: 
-            radial-gradient(#e5dfd3 1px, transparent 0),
-            linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(246,242,233,0.9) 50%, rgba(230,222,208,0.4) 100%);
-          background-size: 24px 24px, 100% 100%;
+            radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0),
+            linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+          background-size: 16px 16px, 100% 100%;
           box-shadow: 
-            0 25px 35px -10px rgba(0, 0, 0, 0.65),
-            0 10px 15px -5px rgba(0, 0, 0, 0.4),
-            inset 0 0 15px rgba(0, 0, 0, 0.03);
+            0 20px 30px -10px rgba(0, 0, 0, 0.55),
+            0 10px 15px -5px rgba(0, 0, 0, 0.35),
+            0 1px 3px rgba(0,0,0,0.1);
         }
 
-        /* Subtle Paper Bent Edge Overlay */
-        .paper-fold-shadow {
-          background: linear-gradient(to bottom right, rgba(0,0,0,0.04) 0%, transparent 40%, rgba(0,0,0,0.06) 100%);
+        /* Subtle Corner Curl Effect */
+        .paper-card::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 25px;
+          height: 25px;
+          background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.04) 50%);
+          pointer-events: none;
         }
 
-        /* Terracotta Red Textured Background Canvas */
-        .terracotta-canvas {
+        /* Terracotta Canvas */
+        .terracotta-bg {
           background-color: #8E2417;
           background-image: 
-            radial-gradient(rgba(0, 0, 0, 0.25) 1px, transparent 0),
-            radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+            radial-gradient(rgba(0, 0, 0, 0.28) 1px, transparent 0),
+            radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
           background-size: 16px 16px, 32px 32px;
           background-position: 0 0, 8px 8px;
         }
       `}</style>
 
       {/* STICKY FULLSCREEN VIEWPORT CONTAINER */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden terracotta-canvas flex flex-col justify-between py-8 md:py-10 select-none border-t border-red-950/40">
+      <div className="sticky top-0 h-screen w-full overflow-hidden terracotta-bg flex flex-col justify-between py-6 md:py-8 select-none border-t border-black/40">
         
         {/* TOP SECTION HEADER */}
-        <div className="w-full max-w-7xl mx-auto px-6 md:px-14 flex items-end justify-between z-20 mb-8 md:mb-14">
+        <div className="w-full max-w-7xl mx-auto px-6 md:px-14 flex items-end justify-between z-20 mb-4 md:mb-8">
           <div>
             {/* BADGE */}
-            <div className="inline-flex items-center gap-2.5 border border-white/25 rounded-full px-3.5 py-1 text-[11px] font-semibold uppercase tracking-widest text-white/90 mb-3 bg-black/15 backdrop-blur-sm">
-              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-white text-[#8E2417] font-extrabold text-[9px]">
-                06
+            <div className="inline-flex items-center gap-2.5 border border-white/20 rounded-full px-3.5 py-1 text-[11px] font-semibold uppercase tracking-widest text-white/90 mb-2.5 bg-black/30 backdrop-blur-sm">
+              <span className="flex h-4 w-4 items-center justify-center rounded-full border border-white/40 text-white font-mono font-bold text-[9px]">
+                07
               </span>
-              <span>RECIPES · レシピ</span>
+              <span className="font-mono text-[10px]">PROJECTS · నిర్మాణ ఉదాహరణలు</span>
               <span className="text-white/30">•</span>
-              <span className="text-white/80">FIVE MINUTES, ONE SPOON</span>
+              <span className="text-white/80 font-mono text-[10px]">BUILT WITH ADDANKI BRICKS</span>
             </div>
 
             {/* MAIN MASSIVE TYPOGRAPHY */}
-            <h2 className="font-display font-black text-4xl sm:text-6xl md:text-7xl tracking-tight text-white uppercase leading-none">
-              COOK <span className="font-light italic font-serif text-white/85 tracking-normal text-3xl sm:text-5xl md:text-6xl">WITH IT.</span>
+            <h2 className="font-cook-display font-black text-4xl sm:text-6xl md:text-7xl tracking-tight text-white uppercase leading-none">
+              BUILT <span className="font-normal text-white">WITH IT.</span>
             </h2>
           </div>
 
           {/* TOP RIGHT SCROLL POSITION INDICATOR */}
           <div className="hidden sm:flex items-center gap-4 text-xs font-mono tracking-widest text-white/80 mb-2">
-            <span>02</span>
+            <span>01</span>
             <div className="w-28 h-[1.5px] bg-white/25 relative overflow-hidden rounded-full">
               <div
                 className="h-full bg-white transition-all duration-150 rounded-full"
-                style={{ width: `${Math.max(10, progress * 100)}%` }}
+                style={{ width: `${Math.max(15, progress * 100)}%` }}
               />
             </div>
-            <span>0{RECIPES_DATA.length}</span>
+            <span>06</span>
           </div>
         </div>
 
-        {/* HORIZONTAL CARDS TRACK (MOVED BY VERTICAL PAGE SCROLL) */}
+        {/* HORIZONTAL CARDS TRACK WITH PERFECT THREAD HANGING (ZERO GAP) */}
         <div className="relative w-full overflow-visible z-20 flex-1 flex items-center">
-          {/* CONTINUOUS HORIZONTAL WIRE STRING LOCKED DIRECTLY TO CLIPS */}
-          <div className="absolute top-[18px] left-0 w-full z-10 pointer-events-none">
-            {/* Wire String Line */}
-            <div className="w-full h-[2.5px] bg-gradient-to-r from-[#200503] via-[#4A0D07] to-[#200503] shadow-[0_4px_8px_rgba(0,0,0,0.6)]" />
+          {/* CONTINUOUS HORIZONTAL WIRE THREAD PASSING EXACTLY THROUGH CLOTHESPIN CLIPS */}
+          <div className="absolute top-[28px] left-0 w-full z-[25] pointer-events-none">
+            {/* Dark Wire Shadow */}
+            <div className="w-full h-[3px] bg-[#120504] shadow-[0_4px_12px_rgba(0,0,0,0.85)]" />
             {/* Wire Highlight line */}
-            <div className="w-full h-[0.5px] bg-white/20 -mt-[2.5px]" />
+            <div className="w-full h-[1px] bg-white/30 -mt-[3px]" />
           </div>
 
           <div
             ref={trackRef}
-            className="flex items-start gap-10 md:gap-14 px-8 md:px-20 pt-8 transition-transform duration-75 ease-out will-change-transform z-20"
+            className="flex items-start gap-8 md:gap-12 px-8 md:px-20 pt-12 transition-transform duration-75 ease-out will-change-transform z-20"
           >
-            {RECIPES_DATA.map((recipe) => (
+            {PROJECTS_DATA.map((project) => (
               <div
-                key={recipe.id}
+                key={project.id}
+                onClick={() => setSelectedProject(project)}
                 style={{
-                  transform: `rotate(${recipe.tilt})`,
+                  transform: `rotate(${project.tilt})`,
                 }}
-                className="relative group shrink-0 w-[220px] sm:w-[250px] md:w-[280px] transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1"
+                className="relative group shrink-0 w-[240px] sm:w-[270px] md:w-[300px] cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:-translate-y-2"
               >
-                {/* REALISTIC WOODEN CLOTHESPIN / PEG CLIP ATTACHED TO WIRE */}
+                {/* REALISTIC WOODEN CLOTHESPIN / PEG CLIP EXACTLY CLAMPED ONTO THREAD WITH ZERO GAP */}
                 <div
                   className="absolute -top-6 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none"
-                  style={{ marginLeft: recipe.clipOffset }}
+                  style={{ marginLeft: project.clipOffset }}
                 >
-                  {/* Peg Top Head */}
-                  <div className="w-4 h-7 bg-gradient-to-b from-[#D4A574] via-[#B88752] to-[#8F6131] rounded-sm shadow-[0_6px_10px_rgba(0,0,0,0.5)] border border-[#5C3D1C] flex flex-col justify-between items-center py-1">
-                    <div className="w-3 h-[1px] bg-[#3B250D]" />
-                    {/* Metal Spring Coil */}
-                    <div className="w-3.5 h-[3px] bg-gradient-to-r from-[#888] via-[#eee] to-[#666] rounded-full shadow-sm" />
-                    <div className="w-3 h-[1px] bg-[#3B250D]" />
+                  {/* Peg Top Head Clamping Thread */}
+                  <div className="w-4 h-8 bg-gradient-to-b from-[#E0B888] via-[#C99A63] to-[#8C602E] rounded-sm shadow-[0_5px_10px_rgba(0,0,0,0.75)] border border-[#593914] flex flex-col justify-between items-center py-1">
+                    <div className="w-3 h-[1px] bg-[#3B2207]" />
+                    {/* Metal Spring Coil right over the wire thread */}
+                    <div className="w-4 h-[4px] bg-gradient-to-r from-[#666] via-[#fff] to-[#444] rounded-full shadow-inner border border-black/30" />
+                    <div className="w-3 h-[1px] bg-[#3B2207]" />
                   </div>
                   {/* Peg Clip Shadow on Paper */}
-                  <div className="w-5 h-2 bg-black/30 blur-[2px] rounded-full -mt-1" />
+                  <div className="w-5 h-2 bg-black/40 blur-[2px] rounded-full -mt-0.5" />
                 </div>
 
                 {/* PHYSICAL HANGING PAPER POSTER CARD */}
-                <div className="paper-sheet rounded-[2px] p-3.5 sm:p-4 pt-5 text-[#221D19] relative overflow-hidden">
-                  <div className="absolute inset-0 paper-fold-shadow pointer-events-none" />
+                <div className="paper-card rounded-sm p-4 pt-6 text-[#1C1815] relative overflow-hidden transition-shadow duration-300 group-hover:shadow-[0_28px_45px_-10px_rgba(0,0,0,0.8)]">
+                  
+                  {/* PROJECT PHOTO POSTER IMAGE */}
+                  <div className="relative w-full aspect-[4/3] rounded-[2px] overflow-hidden bg-stone-200 mb-3 shadow-sm border border-black/5">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      draggable={false}
+                    />
+                  </div>
 
-                  {/* PAPER TOP METADATA */}
-                  <div className="flex items-center justify-between text-[10px] font-mono tracking-wider text-[#7A6D5E] border-b border-[#E0D8C8] pb-2 mb-2.5">
-                    <span className="font-bold text-[#8E2417]">{recipe.id}</span>
+                  {/* PAPER TOP METADATA & TITLE */}
+                  <div className="flex items-center justify-between text-[11px] font-mono tracking-wider mb-1">
+                    <span className="font-bold text-[#8E2417] text-xs">{project.displayId}</span>
                     <span className="uppercase text-[9px] font-semibold text-[#8A7C6B]">
-                      {recipe.time} • {recipe.serves}
+                      {project.time} · {project.serves}
                     </span>
                   </div>
 
-                  {/* RECIPE PHOTO POSTER IMAGE */}
-                  <div className="relative w-full aspect-[16/9] rounded-[1px] overflow-hidden bg-stone-100 mb-3 shadow-inner border border-black/10">
-                    <img
-                      src={recipe.image}
-                      alt={recipe.title}
-                      className="w-full h-full object-cover grayscale-[15%] contrast-[105%] group-hover:scale-105 transition-transform duration-700"
-                      draggable={false}
-                    />
-                    <div className="absolute bottom-1.5 right-1.5 bg-black/65 backdrop-blur-md text-white font-mono text-[8px] font-bold px-1.5 py-0.5 rounded-[1px]">
-                      {recipe.japaneseTitle}
-                    </div>
-                  </div>
-
-                  {/* TITLE & JAPANESE SUBTITLE */}
+                  {/* TITLE & TELUGU SUBTITLE */}
                   <div className="mb-2">
-                    <h3 className="font-display font-black text-base sm:text-lg tracking-tight text-[#1C1815] leading-snug">
-                      {recipe.title}
+                    <h3 className="font-cook-display font-bold text-lg sm:text-xl tracking-tight text-[#1C1815] leading-snug">
+                      {project.title}
                     </h3>
-                    <p className="text-[11px] font-serif italic text-[#8A7A68] mt-0.5">
-                      {recipe.japaneseTitle}
+                    <p className="text-xs font-telugu text-[#8E2417] font-bold mt-0.5">
+                      {project.teluguTitle}
                     </p>
                   </div>
 
-                  {/* INGREDIENT / SPEC TAGS */}
-                  <div className="flex flex-wrap gap-1 mb-2.5">
-                    {recipe.tags.map((tag, tIdx) => (
+                  {/* SPEC / CATEGORY TAGS (ROUNDED PILLS) */}
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {project.tags.map((tag, tIdx) => (
                       <span
                         key={tIdx}
-                        className="inline-block bg-[#EBE4D6] text-[#5C5043] text-[8.5px] font-bold tracking-wider uppercase px-1.5 py-0.5 rounded-[1px] border border-[#DDD4C3]"
+                        className="inline-block bg-[#F5F2EB] text-[#5C5043] text-[8.5px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full border border-[#E2DBD0]"
                       >
                         {tag}
                       </span>
@@ -314,28 +341,28 @@ export default function CookWithItSection() {
                   </div>
 
                   {/* DESCRIPTION PARAGRAPH */}
-                  <p className="text-[11px] sm:text-[11.5px] leading-relaxed text-[#4A4035] mb-3 font-sans">
-                    {recipe.description}
+                  <p className="text-[11px] sm:text-[11.5px] leading-relaxed text-[#4A4035] mb-4 font-sans line-clamp-3">
+                    {project.description}
                   </p>
 
                   {/* FOOTER RATING & STAMP */}
-                  <div className="flex items-center justify-between text-[10px] font-mono tracking-wider text-[#8A7C6B] pt-3 border-t border-[#E0D8C8]">
+                  <div className="flex items-center justify-between text-[10px] font-mono tracking-wider text-[#8A7C6B] pt-2.5 border-t border-[#EAE3D5]">
                     <div className="flex items-center gap-1.5">
-                      <span className="font-bold uppercase text-[9px]">HEAT</span>
+                      <span className="font-bold uppercase text-[9px]">GRADE</span>
                       <div className="flex gap-1">
                         {[...Array(5)].map((_, i) => (
                           <span
                             key={i}
                             className={`inline-block w-1.5 h-1.5 rounded-full ${
-                              i < recipe.heatDots ? 'bg-[#8E2417]' : 'bg-[#D6CDBF]'
+                              i < project.ratingDots ? 'bg-[#8E2417]' : 'bg-[#DDD5C7]'
                             }`}
                           />
                         ))}
                       </div>
                     </div>
 
-                    <span className="font-bold text-[#8E2417] text-[9px] tracking-widest uppercase">
-                      {recipe.stamp}
+                    <span className="font-bold text-[#8E2417] text-[9px] tracking-wider uppercase font-telugu">
+                      {project.stamp}
                     </span>
                   </div>
                 </div>
@@ -346,10 +373,122 @@ export default function CookWithItSection() {
 
         {/* BOTTOM METADATA WATERMARK FOOTER */}
         <div className="w-full max-w-7xl mx-auto px-6 md:px-14 flex items-center justify-between text-[11px] font-mono tracking-widest text-white/50 z-20">
-          <span>TWENTY-NINE WAYS TO USE THE LAST DROP →</span>
-          <span className="hidden sm:inline">SCROLL DOWN TO EXPLORE GALLERY</span>
+          <span>CURATED ARCHITECTURAL CASE STUDIES →</span>
+          <span className="hidden sm:inline">CLICK ANY CARD TO VIEW PROJECT DETAILS</span>
         </div>
       </div>
+
+      {/* ============================================================ */}
+      {/* ZOOMED CARD MODAL OVERLAY                                    */}
+      {/* ============================================================ */}
+      {selectedProject && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md transition-all duration-300 animate-fadeIn select-none"
+          onClick={() => setSelectedProject(null)}
+        >
+          {/* TOP RIGHT CLOSE BUTTON */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              setSelectedProject(null)
+            }}
+            className="fixed top-8 right-8 z-50 flex items-center gap-2 bg-[#1A0503] hover:bg-black border border-white/20 text-white font-mono text-xs uppercase font-bold tracking-widest px-5 py-2.5 rounded-full shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+          >
+            <span>CLOSE</span>
+            <span className="text-sm leading-none">✕</span>
+          </button>
+
+          {/* RIGHT SIDE STEP INDICATORS */}
+          <div className="fixed right-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col items-center gap-2 text-[10px] font-mono text-white/60 pointer-events-none">
+            <span>07</span>
+            <div className="w-[1.5px] h-14 bg-white/20 relative">
+              <div className="w-full h-1/2 bg-[#8E2417]" />
+            </div>
+            <span>09</span>
+            <span className="text-xs font-telugu mt-0.5">క్రిందికి</span>
+          </div>
+
+          {/* ZOOMED CARD CONTAINER */}
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-md md:max-w-lg bg-white rounded-[2px] p-5 sm:p-7 text-[#1C1815] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.9)] border border-white/40 transform transition-all duration-300 scale-100 animate-scaleUp"
+          >
+            {/* Top Clothespin in Zoomed State */}
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none">
+              <div className="w-4 h-8 bg-gradient-to-b from-[#E0B888] via-[#C99A63] to-[#8C602E] rounded-sm shadow-[0_6px_12px_rgba(0,0,0,0.8)] border border-[#593914] flex flex-col justify-between items-center py-1">
+                <div className="w-3 h-[1px] bg-[#3B2207]" />
+                <div className="w-4 h-[3px] bg-gradient-to-r from-[#666] via-[#fff] to-[#444] rounded-full" />
+                <div className="w-3 h-[1px] bg-[#3B2207]" />
+              </div>
+            </div>
+
+            {/* PROJECT PHOTO POSTER IMAGE */}
+            <div className="relative w-full aspect-[16/10] rounded-[2px] overflow-hidden bg-stone-200 mb-4 shadow-sm border border-black/5">
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* PAPER TOP METADATA & TITLE */}
+            <div className="flex items-center justify-between text-xs font-mono tracking-wider mb-1.5">
+              <span className="font-bold text-[#8E2417] text-sm">{selectedProject.displayId}</span>
+              <span className="uppercase text-[10px] font-semibold text-[#8A7C6B]">
+                {selectedProject.time} · {selectedProject.serves}
+              </span>
+            </div>
+
+            {/* TITLE & TELUGU SUBTITLE */}
+            <div className="mb-3">
+              <h3 className="font-cook-display font-black text-2xl sm:text-3xl tracking-tight text-[#1C1815] leading-tight">
+                {selectedProject.title}
+              </h3>
+              <p className="text-sm font-telugu text-[#8E2417] font-bold mt-0.5">
+                {selectedProject.teluguTitle}
+              </p>
+            </div>
+
+            {/* SPEC / CATEGORY TAGS (ROUNDED PILLS) */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              {selectedProject.tags.map((tag, tIdx) => (
+                <span
+                  key={tIdx}
+                  className="inline-block bg-[#F5F2EB] text-[#5C5043] text-[10px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full border border-[#E2DBD0]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* DESCRIPTION PARAGRAPH */}
+            <p className="text-sm sm:text-[15px] leading-relaxed text-[#4A4035] mb-6 font-sans">
+              {selectedProject.description}
+            </p>
+
+            {/* FOOTER RATING & STAMP */}
+            <div className="flex items-center justify-between text-xs font-mono tracking-wider text-[#8A7C6B] pt-4 border-t border-[#EAE3D5]">
+              <div className="flex items-center gap-2">
+                <span className="font-bold uppercase text-[10px]">GRADE</span>
+                <div className="flex gap-1.5">
+                  {[...Array(5)].map((_, i) => (
+                    <span
+                      key={i}
+                      className={`inline-block w-2 h-2 rounded-full ${
+                        i < selectedProject.ratingDots ? 'bg-[#8E2417]' : 'bg-[#DDD5C7]'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <span className="font-bold text-[#8E2417] text-[11px] tracking-wider uppercase font-telugu">
+                {selectedProject.stamp}
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

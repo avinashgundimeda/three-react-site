@@ -23,7 +23,7 @@ export default function BottomTicker() {
   ]
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 w-full bg-[#B5502E] text-white py-2.5 overflow-hidden shadow-lg border-t border-black/10 select-none">
+    <div className="fixed bottom-0 left-0 right-0 z-40 w-full bg-[#8E2417] text-white py-2.5 overflow-hidden shadow-lg border-t border-black/10 select-none">
       <style>{`
         @keyframes ticker-slide {
           0% { transform: translateX(0%); }

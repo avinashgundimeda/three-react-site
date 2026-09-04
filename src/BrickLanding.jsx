@@ -1,6 +1,8 @@
 import React from "react"
 import BrickHero from "./BrickHero"
 import InteractiveBrick from "./InteractiveBrick"
+import RitualSection from "./RitualSection"
+import ProductsSection from "./ProductsSection"
 import CookWithItSection from "./CookWithItSection"
 import LocationSection from "./LocationSection"
 
@@ -73,7 +75,7 @@ export default function BrickLanding({ setPage, brickColor = "#ffffff" }) {
       {/* SECTION 3: DIRECT TO SITE (LOGISTICS SECTION WITH 3D MODEL ASSET ON RIGHT) */}
       <section id="logistics" className="relative w-full min-h-[60vh] flex items-center py-16 md:py-24 px-8 md:px-14 border-t border-[#D9C6AC]/40 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-16">
-          
+
           {/* Left Column: Logistics Info */}
           <div className="lg:col-span-7 max-w-2xl text-left">
             <span className="text-xs font-bold uppercase tracking-wider text-[#C1502E]">03 / Logistics</span>
@@ -116,7 +118,13 @@ export default function BrickLanding({ setPage, brickColor = "#ffffff" }) {
         </div>
       </section>
 
-      {/* SECTION 4: SCROLL-DRIVEN PHYSICAL PAPER HANGING GALLERY */}
+      {/* SECTION 4: THE RITUAL (IMAGE 3 MATCH WITH BRICK HERO ASSET) */}
+      <RitualSection />
+
+      {/* SECTION 5: PREMIUM BRICK PRODUCTS SHOWCASE */}
+      <ProductsSection />
+
+      {/* SECTION 6: SCROLL-DRIVEN PHYSICAL PAPER HANGING GALLERY */}
       <CookWithItSection />
 
       {/* SECTION 5: LOCATION & FACTORY MAP SECTION */}
